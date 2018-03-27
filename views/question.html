@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entrevista Online</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans:400,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body class="">
+    <header>
+      <div class="d-flex justify-content-end mt-3 mr-3">
+        <a class="btn btn-outline-magenta font-weight-bold ml-3" id="logout" href="#" role="button">Cerrar Sesión</a>
+      </div>
+    </header>
+    <main class="vh-75">
+      <section class="container d-flex align-items-center justify-content-center">
+        <div class="row mt-4">
+          <div class="col-sm-8 offset-sm-2">
+            <h5 class="text-center font-weight-bold text-dark mt-5 mb-0 line-height title-js">Pregunta 1</h5>
+            <hr class="hr-small mt-0">
+            <p class="text-center"><small class="counter-js">Tiempo estimado: 30 s</small></p>
+            <p class="text-center text-secondary my-3 line-height question-js">¿Sabes si debes pagar a Laboratoria por la formación que recibirías en caso de ser aceptada?</p>
+            <!-- <span id="minutos">00</span> : <span id="segundos"></span> -->
+            <div class="d-flex justify-content-center mt-5">
+              <input  id="input" type="hidden" role="uploadcare-uploader" name="content" data-crop="disabled" data-multiple="false"/>
+              <a class="btn bg-yellow text-dark font-weight-bold ml-3 next-question-js" id="progress-button" href="#" role="button">Siguiente</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="vh-15">
+      <!-- Barra de progreso -->
+      <div class="container">
+        <div class="progress progress-bar-container">
+          <div class="progress-bar user-progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="progress-counter-container">
+            <span class="counter-span" id="counter">0</span><span>de 8</span>
+        </div>
+      </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script>
+      UPLOADCARE_LOCALE = "es";
+      UPLOADCARE_TABS = "camera";
+      UPLOADCARE_PUBLIC_KEY = "96854dfa70eff01a3a02";
+      UPLOADCARE_LOCALE_TRANSLATIONS = {
+        buttons: {
+          choose: {
+            files: {
+              one: 'Grabar',
+              other: 'Grabar'
+            }
+          }
+        }
+      };
+    </script>
+    <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.2.2/uploadcare.full.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../js/question.js"></script>
+    <script src="../js/data-questions.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  font-family: 'Bitter', serif;
+}
+
+.hero {
+  background-image: url('../assets/images/fondo-principal.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.bg-yellow {
+  background-color: #FFE521;
+}
+
+.bg-magenta {
+  background-color: #FF009E; 
+}
+
+.bg-green {
+  background-color: #56F89A;
+}
+
+.btn-outline-magenta {
+  color: #FF009E;
+  background-color: transparent;
+  background-image: none;
+  border-color: #FF009E; 
+}
+
+.btn-outline-magenta:hover {
+  color: #fff;
+  background-color: #FF009E; 
+  border-color: #FF009E; 
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+.vh-15 {
+  height: 15vh;
+}
+
+.vh-75 {
+  height: 75vh;
+}
+
+.line-height {
+  line-height: 1.6;
+}
+
+.hr-small {
+  border: none;
+  border-top: 0.2rem solid #FFE521;
+  /* border-top: 0.2rem solid #FF009E; */
+  width: 4rem;
+}
+
+.progress-bar-container {
+  margin: 2em 0 1em;
+  width: 100%;
+}
+
+.progress-counter-container{
+  font-size: 0.8em;
+  float: right;
+}
+
+.user-progress-bar {
+  width: 0%;
+}
+
+.counter-span {
+  margin-right: 0.5em;
+}
+
+.uploadcare--widget__button_type_open, .uploadcare--widget__button_type_open:hover, .uploadcare--widget__button_type_open:active, .uploadcare--widget__button_type_open:focus {
+  background-color: #FFE521;
+  color: #343a40!important;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.uploadcare--panel__footer, .uploadcare--preview__back, .uploadcare--camera__button_type_capture, .uploadcare--file__remove, .uploadcare--camera__button_type_cancel-record {
+  display: none;
+}
+
+.uploadcare--file__progressbar {
+  margin-right: 2em;
+}
+
+.uploadcare--widget_status_loaded {
+  display: none;
+}
+
+.uploadcare--dialog__container {
+  align-items: center;
+  height: 78%;
+}
+
