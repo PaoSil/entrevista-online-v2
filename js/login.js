@@ -24,6 +24,7 @@ var opPassword = false;
       uid: user.uid,
       name: user.displayName,
       email: user.email,
+      photo: user.photoURL
     };
     firebase.database().ref('bd/' + user.uid).set(users);
   }
@@ -32,7 +33,7 @@ var opPassword = false;
 
   // Funcionalidad formulario
   function activeFinalButton() {
-    (opDni === true && opPassword === true && opsede === true && opFbLink === true) 
+    (opDni === true && opFbLink === true) 
     ? $('#btnSignUp').attr('disabled', false): $('#btnSignUp').attr('disabled', true);
   }
 
@@ -44,23 +45,7 @@ var opPassword = false;
     ($(this).val().length > 5) ? opDni = true: opDni = false;
     activeFinalButton();
   })
-  
-  $('#password').on('input', function(event) {
-    ($(this).val().length >= 6) ? opPassword = true: opPassword = false;
-    activeFinalButton();
-  });
 
-  // validando Sede y Funcionalidad dropdown toggle de Sedes
-  $('.dropdown-item').on('click', function() {
-    // console.log($(this).text())
-    var sede = $(this).text();
-    console.log(sede);
-    $('.dropdown-toggle').html(sede + '&nbsp;<span class="caret"></span>');
-    ($(this).text()) ? opsede = true: opsede = false;
-    activeFinalButton();
-  })
-
-  // validando link de facebook
   $('#facebook-link').on('input', function(event) {
     var FACEBOOKESTRUC = /(?:https?:\/\/)?(?:www\.)?facebook\.com\/.(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-\.]*)/;
     (FACEBOOKESTRUC.test($(this).val())) ? opFbLink = true: opFbLink= false;
@@ -68,7 +53,7 @@ var opPassword = false;
     activeFinalButton();
   })
 
-  // eVENTO CUANDO SE DA CLICK EN REGISTRATE
+  // Evento cuando se de click al registrarse
   
   $('#btnSignUp').on('click', function(event) {
     firebase.auth().onAuthStateChanged(function(user){
@@ -85,7 +70,8 @@ var opPassword = false;
           email: email,
           name: name,
           dni: $('#dni').val(),
-          password: $('#password').val(),
+          link: $('#facebook-link').val(),
+          sede: $('option')[$('#form-control').val() - 1].html()
         });
       }
     });
