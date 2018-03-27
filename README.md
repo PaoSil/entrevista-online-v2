@@ -97,20 +97,57 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 - ¿Cuál es el proceso actual de reclutamiento?
 - ¿Cómo sabes en qué fase está cada postulante?
 
-1. Daniela Sarzosa
+1. Daniela Sarzosa 
+
 [Entrevista a Daniela](https://drive.google.com/drive/folders/1EM7kBcPld6eUIgCR9gT1eQnOfb4tGhDU?usp=sharing)
 
 2. Beatriz Castiglia 
+
 [Entrevista a Daniela](https://drive.google.com/drive/folders/1I353VAMVsreUJpq61geOoTdWCRljqgLd?usp=sharing)
 
-3. María Fernanda Zamora
+3. María Fernanda Zamora 
 
 [Entrevista a Daniela](https://drive.google.com/drive/folders/12CUDv705wNdBtQvUf_0v5r-HD3ZZduEp?usp=sharing)
 
 
 #### **Conclusiones de las entrevistas**
 
+* Las entrevistas presenciales duran mucho, se busca que en la plataforma online el tiempo sea de 15 a 20 minutos como máximo por cada postulante.
 
+* Las entrevistas tienen una estructura establecida: 
+- Verficación de datos.
+- Preguntas por competencias.
+- Preguntas aleatorias.
+
+* El tiempo límite depende de la pregunta. Por ejemplo: 
+- Preguntas de verificación: 20s como máximo. 
+- Preguntas por competencias: 1min - 2min.
+- Preguntas aleatorias: 20s como máximo.
+
+* Es necesario que la postulante verifique sus datos: DNI/DNI/RUT/RFC/CURP y sede a la que postula.
+
+* Obtener las redes sociales de la postulante como Facebook, Gmail, Twitter, etc.
+
+* Durante cada entrevista, el reclutador llena un TypeForm con las respuestas de la postulante. Al final de esta, él/ella debe contestar 3 preguntas clave:  
+
+- ¿Recomendarías a esta persona? Sí/No
+- Comentarios respecto a la persona.
+- ¿Debería esta persona seguir en el proceso? Sí/No
+
+
+* El proceso que usan ahora para la selección es efectivo pero aún les sigue demandando mucho tiempo. Para este usan herramientas como: Zapier, Typeform, Google Sheets y Mailchimp.
+
+
+### Prototipo en papel 
+
+![Prototipo](assets/img-readme/prototipo-1.jpg)
+![Prototipo](assets/img-readme/prototipo-2.jpg)
+![Prototipo](assets/img-readme/prototipo-3.jpg)
+![Prototipo](assets/img-readme/prototipo-4.jpg)
+![Prototipo](assets/img-readme/prototipo-5.jpg)
+![Prototipo](assets/img-readme/prototipo-6.jpg)
+![Prototipo](assets/img-readme/prototipo-7.jpg)
+![Prototipo](assets/img-readme/prototipo-8.jpg)
 
 ## **Benchmarck**
 
