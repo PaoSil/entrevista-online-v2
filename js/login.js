@@ -10,8 +10,7 @@ var opPassword = false;
 
   function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
-      console.log(result.user); //devuelve datos user 
-      $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`)
+      $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`);
       saveAccount(result.user);
       $('#form-box').show();
       $('#signup-google').hide();
@@ -90,9 +89,6 @@ var opPassword = false;
         });
       }
     });
-
-
-
     window.location.href = 'views/welcome.html';
   });
 });
