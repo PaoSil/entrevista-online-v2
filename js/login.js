@@ -80,7 +80,7 @@ var opPassword = false;
         console.log(email);
 
         var databaseService = firebase.database();
-        var referencia = databaseService.ref('user');
+        var referencia = databaseService.ref('bd').child(codeUser);
         referencia.set({
           email: email,
           name: name,
