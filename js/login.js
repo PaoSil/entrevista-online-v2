@@ -39,82 +39,23 @@ firebase.initializeApp(config);
 
   $('#signup-google').on('click', googleAuth);
 
-
-
-  // Supuesta función en caso se haya registrado, pero tiene errores
-  function observer() { 
-    firebase.auth().onAuthStateChanged(function(user) {
-      // si el usuario esta activo
-      if (user) {
-        // window.location.href = 'views/welcome.html';
-        console.log(user);
-      } else {
-        console.log('usuario no registrado');
-      }
-    });
-  };
-  observer()
-
-
-
-
-
-
-
-  // $('#name').on('input', function(event) {
-  //   if ($(this).val().length >= 5) {
-  //     opname = true;
-  //   } else {
-  //     opname = false;
-  //   }
-  //   activeFinalButton();
-  // });
-
-  // $('#email').on('input', function(event) {
-  //   var EMAILESTRUC = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
-  //   if (EMAILESTRUC.test($(this).val())) {
-  //     opEmail = true;
-  //   } else {
-  //     opEmail = false;
-  //   }
-  //   activeFinalButton();
-  // });
-
-
-  // $('#sede').on('input', function(event){
-  //   if()
-  // });
-  $('#btnSignUp').attr('disabled', true);
-  
   // Funcionalidad formulario
   function activeFinalButton() {
-    // if (opEmail === true && opPassword === true && opname === true && opsede === true) {
-    if (opDni === true && opPassword === true && opsede === true && opFbLink === true) {
-      // $('#btnSignUp1').attr('disabled', false);
-      $('#btnSignUp').attr('disabled', false);
-    } else {
-      // $('#btnSignUp1').attr('disabled', true);
-      $('#btnSignUp').attr('disabled', true);
-    }
+    (opDni === true && opPassword === true && opsede === true && opFbLink === true) 
+    ? $('#btnSignUp').attr('disabled', false): $('#btnSignUp').attr('disabled', true);
   }
 
+  $('#btnSignUp').attr('disabled', true);
+  
 
   /***** VERIFICACION DE LOS INPUT ****/
   $('#dni').on('input', function(event){
-    if($(this).val().length > 5){
-      opDni = true;
-    } else {
-      opDni = false;
-    }
+    ($(this).val().length > 5) ? opDni = true: opDni = false;
     activeFinalButton();
   })
   
   $('#password').on('input', function(event) {
-    if ($(this).val().length >= 6) {
-      opPassword = true;
-    } else {
-      opPassword = false;
-    }
+    ($(this).val().length >= 6) ? opPassword = true: opPassword = false;
     activeFinalButton();
   });
 
@@ -124,24 +65,15 @@ firebase.initializeApp(config);
     var sede = $(this).text();
     console.log(sede);
     $('.dropdown-toggle').html(sede + '&nbsp;<span class="caret"></span>');
-    if($(this).text()) {
-      opsede = true;
-    } else {
-      opsede = false;
-    }
+    ($(this).text()) ? opsede = true: opsede = false;
     activeFinalButton();
   })
 
   // validando link de facebook
   $('#facebook-link').on('input', function(event) {
     var FACEBOOKESTRUC = /(?:https?:\/\/)?(?:www\.)?facebook\.com\/.(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-\.]*)/;
-    if(FACEBOOKESTRUC.test($(this).val())){
-      opFbLink = true;
-      console.log(FACEBOOKESTRUC.test($(this).val()))
-    } else {
-      opFbLink= false
-      console.log('no funciona fb')
-    }
+    (FACEBOOKESTRUC.test($(this).val())) ? opFbLink = true: opFbLink= false;
+      // console.log('no funciona fb')
     activeFinalButton();
   })
 
@@ -162,36 +94,3 @@ firebase.initializeApp(config);
     // });
     window.location.href = 'views/welcome.html';
   });
-
-  // realizando acciones cuando el usuario este autenticado
-  // $('#btnSignUp1').on('click', function(event) {
-  //   // event.preventDefault();
-  //   var emailText = $('#email1').val();
-  //   var passwordText = $('#password1').val();
-  //   firebase.auth().signInWithEmailAndPassword(emailText, passwordText).catch(function(error) {
-  //   // Handle Errors here.
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-  //     if (errorCode) {
-  //       $('#password1').val('');
-  //       alert(errorMessage);
-  //     }
-  //   });
-  // });
-  
-  // Supuesta función en caso se haya registrado, pero tiene errores
-  // function observer() { 
-  //   firebase.auth().onAuthStateChanged(function(user) {
-  //     // si el usuario esta activo
-  //     if (user) {
-  //       var name = $('#name').val();
-  //       var sede = $('#sede').val();
-  //       localStorage.setItem('name', name);
-  //       localStorage.setItem('sede', sede);
-  //       // window.location.href = 'views/welcome.html';
-  //     } else {
-  //       console.log('usuario no logeado');
-  //     }
-  //   });
-  // };
-  // observer()
