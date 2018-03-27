@@ -27,12 +27,62 @@
             <!-- <span id="minutos">00</span> : <span id="segundos"></span> -->
             <div class="d-flex justify-content-center mt-5">
               <input  id="input" type="hidden" role="uploadcare-uploader" name="content" data-crop="disabled" data-multiple="false"/>
+              <a class="btn bg-yellow text-dark font-weight-bold ml-3" href="#" role="button" data-toggle="modal" data-target=".grabacion-audio-video">Grabar</a>
               <a class="btn bg-yellow text-dark font-weight-bold ml-3 next-question-js" id="progress-button" href="#" role="button">Siguiente</a>
+             
             </div>
           </div>
         </div>
       </section>
     </main>
+
+
+    <!-- section MODAL -->
+    <section>          
+
+      <div class="modal fade grabacion-audio-video" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+           
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 offset-sm-2">   
+             
+                <figure >
+                  <video id="live" width="320"></video><br />
+                  <caption>live preview</caption>
+                </figure>
+
+                <!-- <button id="record">EMPEZAR A GRABAR</button> -->
+
+                 <p>
+                    <button onclick="carga()" id="record">EMPEZAR A GRABAR</button>
+                    <button onclick="detenerse()" id="stop" disabled>ENVIAR GRABACION </button>
+                  </p>
+
+
+                <p>Tiempo restante <span id="minutos">00</span>:<span id="segundos">30</span></p>
+
+                <!-- <figure>
+                  <video id="recording" controls width="320"></video><br />
+                  <caption>recorded clip</caption>
+                </figure> -->
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                   <span aria-hidden="true">&times;</span>
+                </button>
+
+              </div>
+            </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
     <footer class="vh-15">
       <!-- Barra de progreso -->
       <div class="container">
@@ -45,7 +95,7 @@
       </div>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script>
+    <!-- <script>
       UPLOADCARE_LOCALE = "es";
       UPLOADCARE_TABS = "camera";
       UPLOADCARE_PUBLIC_KEY = "96854dfa70eff01a3a02";
@@ -59,13 +109,14 @@
           }
         }
       };
-    </script>
-    <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.2.2/uploadcare.full.min.js"></script>
+    </script> -->
+    <!-- <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.2.2/uploadcare.full.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../js/question.js"></script>
     <script src="../js/data-questions.js"></script>
     <script src="../js/app.js"></script>
+    <script src="../js/recording.js"></script>
   </body>
 </html>
