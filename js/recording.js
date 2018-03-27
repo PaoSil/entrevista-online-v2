@@ -69,9 +69,6 @@ function createVideoPostFirebaseNode(url) {
   });
 }
 
-
-// cronometro
-
 var cronometro;
 
 function detenerse() {

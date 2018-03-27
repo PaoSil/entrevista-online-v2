@@ -1,19 +1,8 @@
-var config = {
-  apiKey: "AIzaSyDdkr1qp-DbqD_Qy-L5XDkwDEirjKo0UNE",
-  authDomain: "entrevistasonline-661df.firebaseapp.com",
-  databaseURL: "https://entrevistasonline-661df.firebaseio.com",
-  projectId: "entrevistasonline-661df",
-  storageBucket: "entrevistasonline-661df.appspot.com",
-  messagingSenderId: "538321830580"
-};
-firebase.initializeApp(config);
-  var opDni = false;
-  var opEmail = false;
-  var opPassword = false;
+var opPassword = false;
   var opname = false;
   var opsede = false;
   var opFbLink = false;
-
+  $(document).ready(function() {
   // ocultando formulario
   $('#form-box').hide();
   // Autenticando con google
@@ -32,7 +21,12 @@ firebase.initializeApp(config);
   var userInfo = {};
   
   function saveAccount(user) {
-    firebase.database().ref('newDB/' + user.id).set(userInfo);
+    users = {
+      uid: user.uid,
+      name: user.displayName,
+      email: user.email,
+    };
+    firebase.database().ref('bd/' + user.uid).set(users);
   }
 
   $('#signup-google').on('click', googleAuth);
@@ -85,14 +79,7 @@ firebase.initializeApp(config);
         var name = user.displayName;
         var userCode = user.uid;
         console.log(email);
-        // haciendo referencia al espacioexclusivo creado para el usuario en la base de datos
-        // var userRef = firebase.database().ref('users').child(userCode);
-        // var firebasePostEmail = userRef.child('email');
-        // firebasePostEmail.set('email');
-        // var firebasePostName = userRef.child('name');
-        // firebasePostName.set('name');
-        // var postDni = $('#dni').val();
-        // userRef.child('dni').push(postDni);
+
         var databaseService = firebase.database();
         var referencia = databaseService.ref('user');
         referencia.set({
@@ -108,6 +95,4 @@ firebase.initializeApp(config);
 
     window.location.href = 'views/welcome.html';
   });
-
-
-  
+});

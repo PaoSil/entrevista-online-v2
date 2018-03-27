@@ -1,10 +1,3 @@
-// var widget = uploadcare.Widget('[role=uploadcare-uploader]');
-// widget.onUploadComplete(function(info) {
-//   var urlVideo = info.cdnUrl;
-//   console.log(urlVideo);
-// });
-
-
 $('#change-description').hide();
 $(document).ready(function() {
   var config = {
@@ -34,38 +27,6 @@ $(document).ready(function() {
       firebasePostREsfName.set(name);
       var firebasePostREsfSede = userRef.child('sede');
       firebasePostREsfSede.set(sede);
-      // mostrando los datos del usuario
-      // userRef.on('value', function(datasnapshot) {
-      //   var showingName = datasnapshot.child('name').val();
-      //   var showingEmail = datasnapshot.child('email').val();
-      //   var showingSede = datasnapshot.child('sede').val();
-      //   $('#name').text(showingName);
-      //   $('#email').text(showingEmail);
-      //   $('#sede').text(showingSede);
-      //
-      // });
-
-      // guardando post tipo texto
-      // $('#button-post').on('click', function(event) {
-      //   if ($('#textarea-post').val() && $('#textarea-post').val() != 0) {
-      //     var newPost = $('#textarea-post').val();
-      //     var url = $('#textarea-post').val();
-      //     userRef.child('post').push({
-      //       pregunta: newPost,
-      //       url: url
-      //     });
-      //     $('#textarea-post').val('');
-      //   }
-      // });
-      // var pregunta = 'pregunta';
-      //   var myurl = localStorage.getItem('url');
-      //   function preguntas(pregunta, urlVideo) {
-      //     firebase.database().ref('users').child(userCode).child('post').push({
-      //       pregunta: pregunta,
-      //       url: urlVideo
-      //     });
-      //   }
-
 
       var widget = uploadcare.Widget('[role=uploadcare-uploader]');
       widget.onUploadComplete(function(info) {
@@ -77,7 +38,6 @@ $(document).ready(function() {
         });
         console.log(urlVideo);
         $('#input').val('');
-        // localStorage.setItem('url', urlVideo);
       });
     };
   });
