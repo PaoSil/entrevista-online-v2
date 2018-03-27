@@ -44,11 +44,29 @@ function stopRecording() {
 }
 
 function onRecordingReady(e) {
-  var video = document.getElementById('recording');
-  // e.data contiene un blob que representa la grabación
-  video.src = URL.createObjectURL(e.data);
-  video.play();
-  console.log(video.src);
+  console.log(e.data);
+
+  var uploadTask = firebase.storage().ref('videoPost/' + (+new Date())).put(e.data);
+  uploadTask.on('state_changed',
+    function (s) {
+      // var porcentage = (s.bytesTransferred/ s.totalBytes) * 100;
+      // uploader.value = porcentage;
+    },
+    function (error) {
+      alert('Hubo un error al subir la imagen');
+    },
+    function () {
+      // Se mostrará cuando se ha subido exitosamente la imagen
+      var downloadURL = uploadTask.snapshot.downloadURL;
+      createVideoPostFirebaseNode(downloadURL);
+    }
+  );
+}
+
+function createVideoPostFirebaseNode(url) {
+  firebase.database().ref('bd').child('videoPost').push({
+    url: url
+  });
 }
 
 
