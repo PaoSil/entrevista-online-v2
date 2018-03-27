@@ -1,18 +1,62 @@
-  var config = {
-    apiKey: 'AIzaSyBCVgvNV0gko5O9rNFgQv8aXrtZOF2gzeM',
-    authDomain: 'fir-p-a292a.firebaseapp.com',
-    databaseURL: 'https://fir-p-a292a.firebaseio.com',
-    projectId: 'fir-p-a292a',
-    storageBucket: 'fir-p-a292a.appspot.com',
-    messagingSenderId: '215671637058'
-  };
-  firebase.initializeApp(config);
+var config = {
+  apiKey: "AIzaSyDdkr1qp-DbqD_Qy-L5XDkwDEirjKo0UNE",
+  authDomain: "entrevistasonline-661df.firebaseapp.com",
+  databaseURL: "https://entrevistasonline-661df.firebaseio.com",
+  projectId: "entrevistasonline-661df",
+  storageBucket: "entrevistasonline-661df.appspot.com",
+  messagingSenderId: "538321830580"
+};
+firebase.initializeApp(config);
 
   var opEmail = false;
   var opPassword = false;
   var opname = false;
   var opsede = true;
 
+  // ocultando formulario
+  $('#form-box').hide();
+  // Autenticando con google
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+  function googleAuth() {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      console.log(result.user); //devuelve datos user
+      saveAccount(result.user);
+      $('#form-box').show();
+      $('#signup-google').hide();
+    })
+  }
+
+  var userInfo = {};
+  
+  function saveAccount(user) {
+    firebase.database().ref('newDB/' + user.id).set(userInfo);
+  }
+
+  $('#signup-google').on('click', googleAuth);
+
+
+
+  // Supuesta función en caso se haya registrado, pero tiene errores
+  function observer() { 
+    firebase.auth().onAuthStateChanged(function(user) {
+      // si el usuario esta activo
+      if (user) {
+        // window.location.href = 'views/welcome.html';
+        console.log(user);
+      } else {
+        console.log('usuario no registrado');
+      }
+    });
+  };
+  observer()
+
+
+
+
+
+
+  // Funcionalidad formulario
   function activeFinalButton() {
     if (opEmail === true && opPassword === true && opname === true && opsede === true) {
       $('#btnSignUp1').attr('disabled', false);
@@ -82,18 +126,19 @@
     });
   });
   
-  function observer() { 
-    firebase.auth().onAuthStateChanged(function(user) {
-      // si el usuario esta activo
-      if (user) {
-        var name = $('#name').val();
-        var sede = $('#sede').val();
-        localStorage.setItem('name', name);
-        localStorage.setItem('sede', sede);
-        window.location.href = 'views/welcome.html';
-      } else {
-        console.log('usuario no logeado');
-      }
-    });
-  };
-  observer()
+  // Supuesta función en caso se haya registrado, pero tiene errores
+  // function observer() { 
+  //   firebase.auth().onAuthStateChanged(function(user) {
+  //     // si el usuario esta activo
+  //     if (user) {
+  //       var name = $('#name').val();
+  //       var sede = $('#sede').val();
+  //       localStorage.setItem('name', name);
+  //       localStorage.setItem('sede', sede);
+  //       // window.location.href = 'views/welcome.html';
+  //     } else {
+  //       console.log('usuario no logeado');
+  //     }
+  //   });
+  // };
+  // observer()
