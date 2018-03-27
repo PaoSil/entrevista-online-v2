@@ -21,8 +21,7 @@ firebase.initializeApp(config);
 
   function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
-      console.log(result.user); //devuelve datos user 
-      $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`)
+      $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`);
       saveAccount(result.user);
       $('#form-box').show();
       $('#signup-google').hide();
@@ -32,7 +31,8 @@ firebase.initializeApp(config);
   var userInfo = {};
   
   function saveAccount(user) {
-    firebase.database().ref('newDB/' + user.id).set(userInfo);
+    userInfo.uid = user.uid;
+    firebase.database().ref('newDB/' + user.uid).set(userInfo);
   }
 
   $('#signup-google').on('click', googleAuth);
@@ -108,6 +108,9 @@ firebase.initializeApp(config);
 
     window.location.href = 'views/welcome.html';
   });
+
+
+  
 
 
   
