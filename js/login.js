@@ -23,8 +23,6 @@ firebase.initializeApp(config);
     firebase.auth().signInWithPopup(provider).then(function(result) {
       console.log(result.user); //devuelve datos user 
       $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`)
-      // $('#name').attr('placeholder', result.user.displayName);
-      // $('#email').attr('placeholder', result.user.email);
       saveAccount(result.user);
       $('#form-box').show();
       $('#signup-google').hide();
@@ -80,17 +78,36 @@ firebase.initializeApp(config);
   // eVENTO CUANDO SE DA CLICK EN REGISTRATE
   
   $('#btnSignUp').on('click', function(event) {
-    console.log($(this));
-    // var emailText = $('#email').val();
-    // var passwordText = $('#password').val();
-    // firebase.auth().createUserWithEmailAndPassword(emailText, passwordText).catch(function(error) {
-    // // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   if (errorCode) {
-    //     $('#password1').val('');
-    //     alert(errorMessage);
-    //   }
-    // });
+    firebase.auth().onAuthStateChanged(function(user){
+      if(user){
+        // datos de la cuenta de google
+        var email = user.email;
+        var name = user.displayName;
+        var userCode = user.uid;
+        console.log(email);
+        // haciendo referencia al espacioexclusivo creado para el usuario en la base de datos
+        // var userRef = firebase.database().ref('users').child(userCode);
+        // var firebasePostEmail = userRef.child('email');
+        // firebasePostEmail.set('email');
+        // var firebasePostName = userRef.child('name');
+        // firebasePostName.set('name');
+        // var postDni = $('#dni').val();
+        // userRef.child('dni').push(postDni);
+        var databaseService = firebase.database();
+        var referencia = databaseService.ref('user');
+        referencia.set({
+          email: email,
+          name: name,
+          dni: $('#dni').val(),
+          password: $('#password').val(),
+        });
+      }
+    });
+
+
+
     window.location.href = 'views/welcome.html';
   });
+
+
+  
