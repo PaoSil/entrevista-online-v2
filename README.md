@@ -149,6 +149,46 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 ![Prototipo](assets/img-readme/prototipo-7.jpg)
 ![Prototipo](assets/img-readme/prototipo-8.jpg)
 
+### Testing 
+
+#### Usuario 1
+
+**Valeria Valles**
+
+Alumna de Laboratoria. 
+
+![Valeria](assets/img-readme/testing/valeria-1.jpg)
+![Valeria](assets/img-readme/testing/valeria-2.jpg)
+
+#### Usuario 1
+
+**Ruth Matos**
+
+Alumna de Laboratoria. 
+
+![Valeria](assets/img-readme/testing/ruth-1.jpg)
+![Valeria](assets/img-readme/testing/ruth-2.jpg)
+
+#### Usuario 1
+
+**Molly Sesquién**
+
+Alumna de Laboratoria. 
+
+![Molly](assets/img-readme/testing/molly-1.jpg)
+![Molly](assets/img-readme/testing/molly-2.jpg)
+
+#### Usuario 1
+
+**Maythé Infante**
+
+Alumna de Laboratoria. 
+
+![Maythe](assets/img-readme/testing/maythe-1.jpg)
+![Maythe](assets/img-readme/testing/maythe-2.jpg)
+
+
+
 ## **Benchmarck**
 
 # **ANÁLISIS DE DATOS**
