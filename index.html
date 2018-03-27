@@ -17,19 +17,39 @@
         <div class="row">
           <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 bg-white">
             <h1 class="principal-title-styles text-center my-3"><img src="assets/images/logo.png" alt=""></h1>
-            <form class="mt-5">
+            <button id="signup-google">entra con google</button>
+            <form class="mt-5" id="form-box">
+              <!-- <div class="form-group">
+                <input id="name" class="form-control" type="text" placeholder="">
+              </div> -->
               <div class="form-group">
-                <input id="name" class="form-control" type="text" placeholder="Nombre y Apellido">
+                <input id="dni" class="form-control" type="text" placeholder="DNI / RUT / RFC / CURP">
               </div>
-              <div class="form-group">
-                <input id="sede" class="form-control" type="text" placeholder="Sede">
-              </div>
-              <div class="form-group">
-                <input id="email" class="form-control" type="email" placeholder="Correo electrónico">
-              </div>
+              <!-- <div class="form-group">
+                <input id="email" class="form-control" type="email" placeholder="">
+              </div> -->
               <div class="form-group">
                 <input id="password" class="form-control" type="password" placeholder="Contraseña">
               </div>
+              <!-- dropdown menu con Sede -->
+              <div class="btn-group" >
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sede <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">LIMA</a></li>
+                  <li><a class="dropdown-item" href="#">SANTIAGO DE CHILE</a></li>
+                  <li><a class="dropdown-item" href="#">CIUDAD DE MEXICO</a></li>
+                  <li><a class="dropdown-item" href="#">GUADALAJARA</a></li>
+                </ul>
+              </div>
+              <!-- <div class="form-group">
+                <input id="sede" class="form-control" type="text" placeholder="Sede">
+              </div> -->
+              <div class="form-group">
+                <input id="facebook-link" class="form-control" type="text" placeholder="Tu link de facebook">
+              </div>
+
               <button type="button" id="btnSignUp" class="btn text-white font-weight-bold btn-block bg-magenta mb-3">Registrarte</button>
               <!-- <p class="text-center"><small>Al registrarte, aceptas nuestras Condiciones y la Política de privacidad.</small></p> -->
             </form>
