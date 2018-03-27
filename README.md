@@ -160,12 +160,12 @@ Alumna de Laboratoria.
 ![Valeria](assets/img-readme/testing/valeria-1.jpg)
 ![Valeria](assets/img-readme/testing/valeria-2.jpg)
 
-* **Observaciones:**
+**Observaciones:**
 
 - No lee todo el texto, solo palabras clave.
 
 
-* **Feedback:** 
+**Feedback:** 
 
 - Flujo sencillo.
 - Entiende el proceso de grabación.
@@ -180,13 +180,13 @@ Alumna de Laboratoria.
 ![Valeria](assets/img-readme/testing/ruth-1.jpg)
 ![Valeria](assets/img-readme/testing/ruth-2.jpg)
 
-* **Observaciones:**
+**Observaciones:**
 
 - No lee todo el texto, solo palabras clave.
 - No entiende el proceso de grabación.
 
 
-* **Feedback:** 
+**Feedback:** 
 
 - Flujo sencillo.
 - Le gusta la idea de información sobre precios y horarios.
@@ -201,13 +201,13 @@ Alumna de Laboratoria.
 ![Molly](assets/img-readme/testing/molly-1.jpg)
 ![Molly](assets/img-readme/testing/molly-2.jpg)
 
-* **Observaciones:**
+**Observaciones:**
 
 - No lee todo el texto, solo palabras clave.
 - No entiende el proceso de grabación.
 
 
-* **Feedback:** 
+**Feedback:** 
 
 - Flujo sencillo.
 - Le gusta la idea de información sobre precios y horarios.
@@ -222,51 +222,31 @@ Alumna de Laboratoria.
 ![Maythe](assets/img-readme/testing/maythe-1.jpg)
 ![Maythe](assets/img-readme/testing/maythe-2.jpg)
 
-* **Observaciones:**
+**Observaciones:**
 
 - Lee todo el texto.
 - Entiende el proceso de grabación y guardado.
 
 
-* **Feedback:** 
+**Feedback:** 
 
 - Flujo sencillo.
 - No le agrada mucho la idea de información sobre precios y horarios.
 
+### Iteración
 
+**Modificaciones y puntos de mejora:**
 
-## **Benchmarck**
+- Usar un video corto de guía, en vez de un texto guía, porque no muchas personas lo leen por completo.
+- Quitar el texto de información de precios y horarios.
 
-# **ANÁLISIS DE DATOS**
+[Maythe](Link)
 
-## **Problem Statements**
+### Prototipo de Alta fidelidad
 
-## **HMW**
+[Maythe](Link)
 
-## **Card Sorting**
-
-# **PROPUESTA DE PRODUCTO**
-
-## **User persona**
-
-
-## **FEATURE LIST**
-
-### Priorización
-
-## Paper prototyping 
-
-### Testing del Paper prototyping
-
-# ITERACIÓN
-
-## Modificaciones y puntos de mejora
-
-## Prototipo de Alta fidelidad
-
-## User flow
-
-## Modelo del producto
+### User flow
 
 # SEGUNDA ITERACIÓN
 
@@ -279,5 +259,16 @@ Alumna de Laboratoria.
 ## Implemetaciones a futuro.
 
 # HERRAMIENTAS UTILIZADAS
+
+- Figma.
+- Marvel.
+- Research.
+- HTML5.
+- JavaScript.
+- Firebase.
+- API HTML5.
+- Bootstrap 4.
+
+
 
 
