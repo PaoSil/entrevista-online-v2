@@ -160,7 +160,18 @@ Alumna de Laboratoria.
 ![Valeria](assets/img-readme/testing/valeria-1.jpg)
 ![Valeria](assets/img-readme/testing/valeria-2.jpg)
 
-#### Usuario 1
+* **Observaciones:**
+
+- No lee todo el texto, solo palabras clave.
+
+
+* **Feedback:** 
+
+- Flujo sencillo.
+- Entiende el proceso de grabación.
+- Le gusta la idea de información sobre precios y horarios.
+
+#### Usuario 2
 
 **Ruth Matos**
 
@@ -169,7 +180,19 @@ Alumna de Laboratoria.
 ![Valeria](assets/img-readme/testing/ruth-1.jpg)
 ![Valeria](assets/img-readme/testing/ruth-2.jpg)
 
-#### Usuario 1
+* **Observaciones:**
+
+- No lee todo el texto, solo palabras clave.
+- No entiende el proceso de grabación.
+
+
+* **Feedback:** 
+
+- Flujo sencillo.
+- Le gusta la idea de información sobre precios y horarios.
+
+
+#### Usuario 3
 
 **Molly Sesquién**
 
@@ -178,7 +201,19 @@ Alumna de Laboratoria.
 ![Molly](assets/img-readme/testing/molly-1.jpg)
 ![Molly](assets/img-readme/testing/molly-2.jpg)
 
-#### Usuario 1
+* **Observaciones:**
+
+- No lee todo el texto, solo palabras clave.
+- No entiende el proceso de grabación.
+
+
+* **Feedback:** 
+
+- Flujo sencillo.
+- Le gusta la idea de información sobre precios y horarios.
+
+
+#### Usuario 4
 
 **Maythé Infante**
 
@@ -186,6 +221,17 @@ Alumna de Laboratoria.
 
 ![Maythe](assets/img-readme/testing/maythe-1.jpg)
 ![Maythe](assets/img-readme/testing/maythe-2.jpg)
+
+* **Observaciones:**
+
+- Lee todo el texto.
+- Entiende el proceso de grabación y guardado.
+
+
+* **Feedback:** 
+
+- Flujo sencillo.
+- No le agrada mucho la idea de información sobre precios y horarios.
 
 
 
