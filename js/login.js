@@ -7,7 +7,7 @@ var config = {
   messagingSenderId: "538321830580"
 };
 firebase.initializeApp(config);
-
+  var opDni = false;
   var opEmail = false;
   var opPassword = false;
   var opname = false;
@@ -22,9 +22,9 @@ firebase.initializeApp(config);
   function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
       console.log(result.user); //devuelve datos user 
-      // $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`)
-      $('#name').attr('placeholder', result.user.displayName);
-      $('#email').attr('placeholder', result.user.email);
+      $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`)
+      // $('#name').attr('placeholder', result.user.displayName);
+      // $('#email').attr('placeholder', result.user.email);
       saveAccount(result.user);
       $('#form-box').show();
       $('#signup-google').hide();
@@ -60,17 +60,6 @@ firebase.initializeApp(config);
 
 
 
-  // Funcionalidad formulario
-  function activeFinalButton() {
-    // if (opEmail === true && opPassword === true && opname === true && opsede === true) {
-    if (opPassword === true && opsede === true && opFbLink === true ) {
-      $('#btnSignUp1').attr('disabled', false);
-      $('#btnSignUp').attr('disabled', false);
-    } else {
-      $('#btnSignUp1').attr('disabled', true);
-      $('#btnSignUp').attr('disabled', true);
-    }
-  }
 
   // $('#name').on('input', function(event) {
   //   if ($(this).val().length >= 5) {
@@ -95,9 +84,30 @@ firebase.initializeApp(config);
   // $('#sede').on('input', function(event){
   //   if()
   // });
+  $('#btnSignUp').attr('disabled', true);
+  
+  // Funcionalidad formulario
+  function activeFinalButton() {
+    // if (opEmail === true && opPassword === true && opname === true && opsede === true) {
+    if (opDni === true && opPassword === true && opsede === true && opFbLink === true) {
+      // $('#btnSignUp1').attr('disabled', false);
+      $('#btnSignUp').attr('disabled', false);
+    } else {
+      // $('#btnSignUp1').attr('disabled', true);
+      $('#btnSignUp').attr('disabled', true);
+    }
+  }
 
 
-  // VERIFICACION DE LOS INPUT 
+  /***** VERIFICACION DE LOS INPUT ****/
+  $('#dni').on('input', function(event){
+    if($(this).val().length > 5){
+      opDni = true;
+    } else {
+      opDni = false;
+    }
+    activeFinalButton();
+  })
   
   $('#password').on('input', function(event) {
     if ($(this).val().length >= 6) {
@@ -109,18 +119,18 @@ firebase.initializeApp(config);
   });
 
   // validando Sede y Funcionalidad dropdown toggle de Sedes
-$('.dropdown-item').on('click', function() {
-  // console.log($(this).text())
-  var sede = $(this).text();
-  console.log(sede);
-  $('.dropdown-toggle').html(sede + '&nbsp;<span class="caret"></span>');
-  if($(this).text()) {
-    opsede = true;
-  } else {
-    opsede = false;
-  }
-  activeFinalButton();
-})
+  $('.dropdown-item').on('click', function() {
+    // console.log($(this).text())
+    var sede = $(this).text();
+    console.log(sede);
+    $('.dropdown-toggle').html(sede + '&nbsp;<span class="caret"></span>');
+    if($(this).text()) {
+      opsede = true;
+    } else {
+      opsede = false;
+    }
+    activeFinalButton();
+  })
 
   // validando link de facebook
   $('#facebook-link').on('input', function(event) {
@@ -150,23 +160,24 @@ $('.dropdown-item').on('click', function() {
     //     alert(errorMessage);
     //   }
     // });
+    window.location.href = 'views/welcome.html';
   });
 
   // realizando acciones cuando el usuario este autenticado
-  $('#btnSignUp1').on('click', function(event) {
-    // event.preventDefault();
-    var emailText = $('#email1').val();
-    var passwordText = $('#password1').val();
-    firebase.auth().signInWithEmailAndPassword(emailText, passwordText).catch(function(error) {
-    // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      if (errorCode) {
-        $('#password1').val('');
-        alert(errorMessage);
-      }
-    });
-  });
+  // $('#btnSignUp1').on('click', function(event) {
+  //   // event.preventDefault();
+  //   var emailText = $('#email1').val();
+  //   var passwordText = $('#password1').val();
+  //   firebase.auth().signInWithEmailAndPassword(emailText, passwordText).catch(function(error) {
+  //   // Handle Errors here.
+  //     var errorCode = error.code;
+  //     var errorMessage = error.message;
+  //     if (errorCode) {
+  //       $('#password1').val('');
+  //       alert(errorMessage);
+  //     }
+  //   });
+  // });
   
   // Supuesta función en caso se haya registrado, pero tiene errores
   // function observer() { 
