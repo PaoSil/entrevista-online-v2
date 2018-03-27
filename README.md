@@ -149,38 +149,104 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 ![Prototipo](assets/img-readme/prototipo-7.jpg)
 ![Prototipo](assets/img-readme/prototipo-8.jpg)
 
-## **Benchmarck**
+### Testing 
 
-# **ANÁLISIS DE DATOS**
+#### Usuario 1
 
-## **Problem Statements**
+**Valeria Valles**
 
-## **HMW**
+Alumna de Laboratoria. 
 
-## **Card Sorting**
+![Valeria](assets/img-readme/testing/valeria-1.jpg)
+![Valeria](assets/img-readme/testing/valeria-2.jpg)
 
-# **PROPUESTA DE PRODUCTO**
+**Observaciones:**
 
-## **User persona**
+- No lee todo el texto, solo palabras clave.
 
 
-## **FEATURE LIST**
+**Feedback:** 
 
-### Priorización
+- Flujo sencillo.
+- Entiende el proceso de grabación.
+- Le gusta la idea de información sobre precios y horarios.
 
-## Paper prototyping 
+#### Usuario 2
 
-### Testing del Paper prototyping
+**Ruth Matos**
 
-# ITERACIÓN
+Alumna de Laboratoria. 
 
-## Modificaciones y puntos de mejora
+![Valeria](assets/img-readme/testing/ruth-1.jpg)
+![Valeria](assets/img-readme/testing/ruth-2.jpg)
 
-## Prototipo de Alta fidelidad
+**Observaciones:**
 
-## User flow
+- No lee todo el texto, solo palabras clave.
+- No entiende el proceso de grabación.
 
-## Modelo del producto
+
+**Feedback:** 
+
+- Flujo sencillo.
+- Le gusta la idea de información sobre precios y horarios.
+
+
+#### Usuario 3
+
+**Molly Sesquién**
+
+Alumna de Laboratoria. 
+
+![Molly](assets/img-readme/testing/molly-1.jpg)
+![Molly](assets/img-readme/testing/molly-2.jpg)
+
+**Observaciones:**
+
+- No lee todo el texto, solo palabras clave.
+- No entiende el proceso de grabación.
+
+
+**Feedback:** 
+
+- Flujo sencillo.
+- Le gusta la idea de información sobre precios y horarios.
+
+
+#### Usuario 4
+
+**Maythé Infante**
+
+Alumna de Laboratoria. 
+
+![Maythe](assets/img-readme/testing/maythe-1.jpg)
+![Maythe](assets/img-readme/testing/maythe-2.jpg)
+
+**Observaciones:**
+
+- Lee todo el texto.
+- Entiende el proceso de grabación y guardado.
+
+
+**Feedback:** 
+
+- Flujo sencillo.
+- No le agrada mucho la idea de información sobre precios y horarios.
+
+### Iteración
+
+**Modificaciones y puntos de mejora:**
+
+- Usar un video corto de guía, en vez de un texto guía, porque no muchas personas lo leen por completo.
+- Quitar el texto de información de precios y horarios.
+
+[Maythe](Link)
+
+### Prototipo de Alta fidelidad
+
+[Maythe](Link)
+
+### User flow
 
 # SEGUNDA ITERACIÓN
 
@@ -193,5 +259,16 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 ## Implemetaciones a futuro.
 
 # HERRAMIENTAS UTILIZADAS
+
+- Figma.
+- Marvel.
+- Research.
+- HTML5.
+- JavaScript.
+- Firebase.
+- API HTML5.
+- Bootstrap 4.
+
+
 
 
