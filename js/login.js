@@ -61,6 +61,7 @@ var opPassword = false;
         // datos de la cuenta de google
         var email = user.email;
         var name = user.displayName;
+        var photo = user.photoURL;
         var userCode = user.uid;
         console.log(email);
 
@@ -69,9 +70,9 @@ var opPassword = false;
         referencia.set({
           email: email,
           name: name,
+          photo: photo,
           dni: $('#dni').val(),
           link: $('#facebook-link').val(),
-          sede: $('option')[$('#form-control').val() - 1].html()
         });
       }
     });
