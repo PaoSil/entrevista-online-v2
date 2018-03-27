@@ -5,7 +5,7 @@ window.onload = function () {
   recordButton = document.getElementById('record');
   stopButton = document.getElementById('stop');
 
-  // get video & audio stream from user
+  // obtener video y transmisión de audio del usuario
   navigator.mediaDevices.getUserMedia({
     audio: true,
     video: true
@@ -39,13 +39,50 @@ function stopRecording() {
   recordButton.disabled = false;
   stopButton.disabled = true;
 
-  // Stopping the recorder will eventually trigger the 'dataavailable' event and we can complete the recording process
+  // Detener el grabador eventualmente activará el evento 'dataavailable' y podremos completar el proceso de grabación
   recorder.stop();
 }
 
 function onRecordingReady(e) {
   var video = document.getElementById('recording');
-  // e.data contains a blob representing the recording
+  // e.data contiene un blob que representa la grabación
   video.src = URL.createObjectURL(e.data);
   video.play();
+  console.log(video.src);
 }
+
+
+// cronometro
+
+var cronometro;
+
+function detenerse() {
+   clearInterval(cronometro);
+}
+
+function carga() {
+ contador_s =30;
+ contador_m =0;
+
+    s = document.getElementById("segundos");
+    m = document.getElementById("minutos");
+
+    cronometro = setInterval(
+     function(){
+       if(contador_s==60) {
+         contador_s=0;
+         contador_m++;
+         m.innerHTML = contador_m;
+           if(contador_m==60) {
+              contador_m=0;
+           }
+        }
+
+        s.innerHTML = contador_s;
+          contador_s--;
+          if (contador_s===-0) {
+            detenerse()
+          }
+        }
+        ,1000);
+   }
