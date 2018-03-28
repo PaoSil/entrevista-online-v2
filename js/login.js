@@ -63,7 +63,8 @@ var opPassword = false;
         var name = user.displayName;
         var photo = user.photoURL;
         var userCode = user.uid;
-        console.log(email);
+        // almacenando el uid en local storage
+        localStorage.setItem('userCode', userCode);
 
         var databaseService = firebase.database();
         var referencia = databaseService.ref('bd').child(userCode);
