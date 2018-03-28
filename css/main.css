@@ -32,7 +32,7 @@ header {
 }
 
 .bg-magenta {
-  background-color: #FF009E; 
+  background-color: #FF009E;
 }
 
 .bg-green {
@@ -43,13 +43,13 @@ header {
   color: #FF009E;
   background-color: transparent;
   background-image: none;
-  border-color: #FF009E; 
+  border-color: #FF009E;
 }
 
 .btn-outline-magenta:hover {
   color: #fff;
-  background-color: #FF009E; 
-  border-color: #FF009E; 
+  background-color: #FF009E;
+  border-color: #FF009E;
 }
 
 .vh-100 {
@@ -116,6 +116,8 @@ header {
   align-items: center;
   height: 78%;
 }
+<<<<<<< HEAD
+=======
 
 /* Style for Button */
 
@@ -166,3 +168,4 @@ header {
     max-width: 950px;
   }
 }
+>>>>>>> 2499c36fc353e8bce1f7c07915405df2ecbbed90
