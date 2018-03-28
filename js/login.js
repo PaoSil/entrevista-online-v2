@@ -10,7 +10,7 @@ $(document).ready(function () {
 
   function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function (result) {
-      $('#form-box').prepend(`<p class="text-center color-title">¡Finaliza con tu registro!</p><br>`);
+      $('#form-box').prepend(`<p class="text-center color-title">¡Finaliza tu registro!</p><br>`);
       saveAccount(result.user);
       $('#form-box').show();
       $('#signup-google').hide();
@@ -75,9 +75,27 @@ $(document).ready(function () {
           photo: photo,
           dni: $('#dni').val(),
           link: $('#facebook-link').val(),
+          uid: userCode
         });
       }
     });
     window.location.href = 'views/welcome.html';
+  });
+
+  var userRegisterUid;
+
+  // Leyendo los datos del usuario
+  firebase.database().ref('bd').on('value', function (datasnapshot) {
+    userRegisterUid = datasnapshot.child(localStorage.getItem('userCode')).child('uid').val();
+    // console.log(userRegisterUid);
+  });
+
+  // Evento que verifique si está o no registrado el usuario
+  $('#signIn').on('click', function () {
+    if (userRegisterUid) {
+      window.location.href = 'views/welcome.html';
+    } else {
+      alert('Parece que aún no estás registrada.');
+    }
   });
 });

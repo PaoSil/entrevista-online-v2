@@ -145,6 +145,22 @@ header {
   font-weight: 800;
 }
 
+.button-none {
+  background: none;
+  border: 0;
+  color: blue;
+  cursor: pointer;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; 
+  -webkit-appearance: button; 
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 950px;
