@@ -10,10 +10,11 @@ $(document).ready(function () {
 
   function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function (result) {
-      $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`);
+      $('#form-box').prepend(`<p class="text-center color-title">¡Finaliza con tu registro!</p><br>`);
       saveAccount(result.user);
       $('#form-box').show();
       $('#signup-google').hide();
+      $('#account').hide();
     })
   }
 

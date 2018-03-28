@@ -1,11 +1,6 @@
-console.log(questions);
-console.log(timeForQuestion);
-
-
 var recordButton, stopButton, recorder, liveStream;
 
 function capturingAudioAndVideo() {
-
 
   document.getElementById("record").textContent = "EMPEZAR A GRABAR";
   document.getElementById("stop").textContent = "ENVIAR GRABACION";
@@ -52,8 +47,6 @@ function stopRecording() {
 }
 
 function onRecordingReady(e) {
-  var data = e.data;
-  console.log(e.data);
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {

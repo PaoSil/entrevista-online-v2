@@ -6,6 +6,16 @@ header {
   font-family: 'Bitter', serif;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+}
+
 .hero {
   background-image: url('../assets/images/fondo-principal.png');
   background-repeat: no-repeat;
@@ -107,3 +117,36 @@ header {
   height: 78%;
 }
 
+/* Style for Button */
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.button {
+  background-color: #ea4335;
+  border-color: #ea4335;
+  color: #fff;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+  margin-bottom: 3rem;
+}
+
+.button:active, .button:hover {
+  background-color: #ea4335;
+  border-color: #ea4335;
+  color: #fff;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+}
+
+.color-title {
+  font-weight: 800;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 950px;
+  }
+}
