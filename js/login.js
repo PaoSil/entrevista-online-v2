@@ -80,22 +80,21 @@ $(document).ready(function () {
     });
     window.location.href = 'views/welcome.html';
   });
-});
 
-var userRegisterUid;
+  var userRegisterUid;
 
-// Leyendo los datos del usuario
-firebase.database().ref('bd').on('value', function (datasnapshot) {
-  userRegisterUid = datasnapshot.child(localStorage.getItem('userCode')).child('uid').val();
-  console.log(userRegisterUid);
-});
+  // Leyendo los datos del usuario
+  firebase.database().ref('bd').on('value', function (datasnapshot) {
+    userRegisterUid = datasnapshot.child(localStorage.getItem('userCode')).child('uid').val();
+    // console.log(userRegisterUid);
+  });
 
-// Evento que verifique si está o no registrado el usuario
-$('#signIn').on('click', function () {
-  if (userRegisterUid) {
-    window.location.href = 'views/welcome.html';
-  } else {
-    alert('Parece que aún no estás registrada.');
-    console.log($(this));
-  }
+  // Evento que verifique si está o no registrado el usuario
+  $('#signIn').on('click', function () {
+    if (userRegisterUid) {
+      window.location.href = 'views/welcome.html';
+    } else {
+      alert('Parece que aún no estás registrada.');
+    }
+  });
 });
