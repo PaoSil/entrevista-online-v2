@@ -1,7 +1,10 @@
-
 var recordButton, stopButton, recorder, liveStream;
 
-window.onload = function () {
+function capturingAudioAndVideo() {
+
+  document.getElementById("record").textContent = "EMPEZAR A GRABAR";
+  document.getElementById("stop").textContent = "ENVIAR GRABACION";
+
   recordButton = document.getElementById('record');
   stopButton = document.getElementById('stop');
 
@@ -10,18 +13,18 @@ window.onload = function () {
     audio: true,
     video: true
   })
-  .then(function (stream) {
-    liveStream = stream;
+    .then(function (stream) {
+      liveStream = stream;
 
-    var liveVideo = document.getElementById('live');
-    liveVideo.src = URL.createObjectURL(stream);
-    liveVideo.play();
+      var liveVideo = document.getElementById('live');
+      liveVideo.src = URL.createObjectURL(stream);
+      liveVideo.play();
 
-    recordButton.disabled = false;
-    recordButton.addEventListener('click', startRecording);
-    stopButton.addEventListener('click', stopRecording);
+      recordButton.disabled = false;
+      recordButton.addEventListener('click', startRecording);
+      stopButton.addEventListener('click', stopRecording);
 
-  });
+    });
 };
 
 function startRecording() {
@@ -44,45 +47,35 @@ function stopRecording() {
 }
 
 function onRecordingReady(e) {
-  var video = document.getElementById('recording');
-  // e.data contiene un blob que representa la grabación
-  video.src = URL.createObjectURL(e.data);
-  video.play();
-  console.log(video.src);
-}
 
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var codeUser = user.uid;
+      var name = user.displayName;
 
-// cronometro
-
-var cronometro;
-
-function detenerse() {
-   clearInterval(cronometro);
-}
-
-function carga() {
- contador_s =30;
- contador_m =0;
-
-    s = document.getElementById("segundos");
-    m = document.getElementById("minutos");
-
-    cronometro = setInterval(
-     function(){
-       if(contador_s==60) {
-         contador_s=0;
-         contador_m++;
-         m.innerHTML = contador_m;
-           if(contador_m==60) {
-              contador_m=0;
-           }
+      var uploadTask = firebase.storage().ref('videoAnswer/' + name).put(e.data);
+      uploadTask.on('state_changed',
+        function (s) {
+          // var porcentage = (s.bytesTransferred/ s.totalBytes) * 100;
+          // uploader.value = porcentage;
+        },
+        function (error) {
+          alert('Hubo un error al subir la imagen');
+        },
+        function () {
+          // Se mostrará cuando se ha subido exitosamente la imagen
+          var downloadURL = uploadTask.snapshot.downloadURL;
+          createVideoPostFirebaseNode(downloadURL);
         }
+      );
 
-        s.innerHTML = contador_s;
-          contador_s--;
-          if (contador_s===-0) {
-            detenerse()
-          }
-        }
-        ,1000);
-   }
+      function createVideoPostFirebaseNode(url) {
+        firebase.database().ref('bd').child(codeUser).child('videoAnswer').push({
+          url: url
+        });
+      }
+    } else {
+      // No user is signed in.
+    }
+  });
+}
