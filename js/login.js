@@ -1,15 +1,15 @@
 var opPassword = false;
-  var opname = false;
-  var opsede = false;
-  var opFbLink = false;
-  $(document).ready(function() {
+var opname = false;
+var opsede = false;
+var opFbLink = false;
+$(document).ready(function () {
   // ocultando formulario
   $('#form-box').hide();
   // Autenticando con google
   var provider = new firebase.auth.GoogleAuthProvider();
 
   function googleAuth() {
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+    firebase.auth().signInWithPopup(provider).then(function (result) {
       $('#form-box').prepend(`<p>${result.user.displayName}</p><p>${result.user.email}</p>`);
       saveAccount(result.user);
       $('#form-box').show();
@@ -18,7 +18,7 @@ var opPassword = false;
   }
 
   var userInfo = {};
-  
+
   function saveAccount(user) {
     users = {
       uid: user.uid,
@@ -33,37 +33,38 @@ var opPassword = false;
 
   // Funcionalidad formulario
   function activeFinalButton() {
-    (opDni === true && opFbLink === true) 
-    ? $('#btnSignUp').attr('disabled', false): $('#btnSignUp').attr('disabled', true);
+    (opDni === true && opFbLink === true)
+      ? $('#btnSignUp').attr('disabled', false) : $('#btnSignUp').attr('disabled', true);
   }
 
   $('#btnSignUp').attr('disabled', true);
-  
+
 
   /***** VERIFICACION DE LOS INPUT ****/
-  $('#dni').on('input', function(event){
-    ($(this).val().length > 5) ? opDni = true: opDni = false;
+  $('#dni').on('input', function (event) {
+    ($(this).val().length > 5) ? opDni = true : opDni = false;
     activeFinalButton();
   })
 
-  $('#facebook-link').on('input', function(event) {
+  $('#facebook-link').on('input', function (event) {
     var FACEBOOKESTRUC = /(?:https?:\/\/)?(?:www\.)?facebook\.com\/.(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-\.]*)/;
-    (FACEBOOKESTRUC.test($(this).val())) ? opFbLink = true: opFbLink= false;
-      // console.log('no funciona fb')
+    (FACEBOOKESTRUC.test($(this).val())) ? opFbLink = true : opFbLink = false;
+    // console.log('no funciona fb')
     activeFinalButton();
   })
 
   // Evento cuando se de click al registrarse
-  
-  $('#btnSignUp').on('click', function(event) {
-    firebase.auth().onAuthStateChanged(function(user){
-      if(user){
+
+  $('#btnSignUp').on('click', function (event) {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
         // datos de la cuenta de google
         var email = user.email;
         var name = user.displayName;
         var photo = user.photoURL;
         var userCode = user.uid;
-        console.log(email);
+        // almacenando el uid en local storage
+        localStorage.setItem('userCode', userCode);
 
         var databaseService = firebase.database();
         var referencia = databaseService.ref('bd').child(userCode);

@@ -1,7 +1,15 @@
+console.log(questions);
+console.log(timeForQuestion);
+
 
 var recordButton, stopButton, recorder, liveStream;
 
-window.onload = function () {
+function capturingAudioAndVideo() {
+
+
+  document.getElementById("record").textContent = "EMPEZAR A GRABAR";
+  document.getElementById("stop").textContent = "ENVIAR GRABACION";
+
   recordButton = document.getElementById('record');
   stopButton = document.getElementById('stop');
 
@@ -44,13 +52,15 @@ function stopRecording() {
 }
 
 function onRecordingReady(e) {
+  var data = e.data;
   console.log(e.data);
+
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       var codeUser = user.uid;
       var name = user.displayName;
 
-      var uploadTask = firebase.storage().ref('videoAnswer/' + name).child((+new Date())).put(e.data);
+      var uploadTask = firebase.storage().ref('videoAnswer/' + name).put(e.data);
       uploadTask.on('state_changed',
         function (s) {
           // var porcentage = (s.bytesTransferred/ s.totalBytes) * 100;
@@ -75,37 +85,4 @@ function onRecordingReady(e) {
       // No user is signed in.
     }
   });
-}
-
-var cronometro;
-
-function detenerse() {
-  clearInterval(cronometro);
-}
-
-function carga() {
-  contador_s = 30;
-  contador_m = 0;
-
-  s = document.getElementById("segundos");
-  m = document.getElementById("minutos");
-
-  cronometro = setInterval(
-    function () {
-      if (contador_s == 60) {
-        contador_s = 0;
-        contador_m++;
-        m.innerHTML = contador_m;
-        if (contador_m == 60) {
-          contador_m = 0;
-        }
-      }
-
-      s.innerHTML = contador_s;
-      contador_s--;
-      if (contador_s === -0) {
-        detenerse()
-      }
-    }
-    , 1000);
 }
