@@ -1,7 +1,20 @@
+console.log(questions);
+console.log(timeForQuestion);
+
 
 var recordButton, stopButton, recorder, liveStream;
 
-window.onload = function () {
+function capturingAudioAndVideo() {
+
+  
+  document.getElementById("record").textContent = "EMPEZAR A GRABAR";
+  document.getElementById("stop").textContent = "ENVIAR GRABACION";
+
+  // document.getElementById("minutos").textContent = "00";
+  // document.getElementById("segundos").textContent = timeForQuestion;
+
+
+
   recordButton = document.getElementById('record');
   stopButton = document.getElementById('stop');
 
@@ -69,35 +82,36 @@ function createVideoPostFirebaseNode(url) {
   });
 }
 
-var cronometro;
+// var cronometro;
 
-function detenerse() {
-   clearInterval(cronometro);
-}
+// function detenerse() {
+//    clearInterval(cronometro);
+// }
 
-function carga() {
- contador_s =30;
- contador_m =0;
+// function carga() {
 
-    s = document.getElementById("segundos");
-    m = document.getElementById("minutos");
+//  second = 30;
+//  minutes =0;
 
-    cronometro = setInterval(
-     function(){
-       if(contador_s==60) {
-         contador_s=0;
-         contador_m++;
-         m.innerHTML = contador_m;
-           if(contador_m==60) {
-              contador_m=0;
-           }
-        }
+//     s = document.getElementById("segundos");
+//     m = document.getElementById("minutos");
 
-        s.innerHTML = contador_s;
-          contador_s--;
-          if (contador_s===-0) {
-            detenerse()
-          }
-        }
-        ,1000);
-   }
+//     cronometro = setInterval(
+//      function(){
+//        if(second==60) {
+//         second=0;
+//         minutes ++;
+//          m.innerHTML = contador_m;
+//            if(contador_m == 60) {
+//             contador_m = 0;
+//            }
+//         }
+
+//         s.innerHTML = second;
+//         second--;
+//           if (second ===-0) {
+//             detenerse()
+//           }
+//         }
+//         ,1000);
+//    }

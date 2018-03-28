@@ -30,46 +30,41 @@
           <p class="text-center text-secondary my-3 line-height question-js">¿Sabes si debes pagar a Laboratoria por la formación que recibirías en caso de ser aceptada?</p>
           <!-- <span id="minutos">00</span> : <span id="segundos"></span> -->
           <div class="d-flex justify-content-center mt-5">
-            <input id="input" type="hidden" role="uploadcare-uploader" name="content" data-crop="disabled" data-multiple="false" />
-            <a class="btn bg-yellow text-dark font-weight-bold ml-3" href="#" role="button" data-toggle="modal" data-target=".grabacion-audio-video">Grabar</a>
+            <!-- <input id="input" type="hidden" role="uploadcare-uploader" name="content" data-crop="disabled" data-multiple="false" /> -->
+            <a class="btn bg-yellow text-dark font-weight-bold ml-3" href="#" role="button" onclick="capturingAudioAndVideo()" >Grabar</a>
             <a class="btn bg-yellow text-dark font-weight-bold ml-3 next-question-js" id="progress-button" href="#" role="button">Siguiente</a>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <!-- section MODAL -->
-  <section>
-    <div class="modal fade grabacion-audio-video" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+
           <div class="container">
             <div class="row">
               <div class="col-sm-8 offset-sm-2">
+                
+                  <p>Tiempo restante
+                      <span id="minutos"></span>:
+                      <span id="segundos"></span>
+                    </p>
+
                 <figure>
                   <video id="live" width="320"></video>
                   <br />
-                  <caption>live preview</caption>
+                  <!-- <caption>live preview</caption> -->
                 </figure>
                 <!-- <button id="record">EMPEZAR A GRABAR</button> -->
                 <p>
-                  <button onclick="carga()" id="record">EMPEZAR A GRABAR</button>
-                  <button onclick="detenerse()" id="stop" disabled>ENVIAR GRABACION </button>
+                  <button onclick="carga()" id="record"></button>
+                  <button onclick="detenerse()" id="stop" disabled> </button>
                 </p>
-                <p>Tiempo restante
-                  <span id="minutos">00</span>:
-                  <span id="segundos">30</span>
-                </p>
+              
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  
   <footer class="vh-15">
     <!-- Barra de progreso -->
     <div class="container">
@@ -83,7 +78,7 @@
     </div>
   </footer>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-  <script type="text/javascript" src="../js/initial-firebase.js"></script>
+  <!-- <script type="text/javascript" src="../js/initial-firebase.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
