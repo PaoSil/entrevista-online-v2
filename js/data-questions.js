@@ -1,3 +1,4 @@
+
 var questions = {
   'groupOne': [
     {
@@ -160,6 +161,9 @@ for (var i = 0; i < result.length; i++) {
 
     var x = result[i][y].Question;
     var l = result[i][y].Time;
+
+    console.log(l)
+
     var userQuestions = chosenQuestions.push({
       question: x,
       time: l
@@ -176,15 +180,35 @@ var displayQuestion = document.querySelector('.question-js');
 var nextQuestion = document.querySelector('.next-question-js');
 
 var centinel = 0;
+var timeForQuestion = '';
+
 
 title.textContent = 'Pregunta ' + (centinel + 1);
 counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
+
 displayQuestion.textContent = chosenQuestions[centinel].question;
+
+console.log(chosenQuestions[centinel].time);
+
+
+
 
 nextQuestion.addEventListener('click', function () {
   centinel += 1;
   title.textContent = 'Pregunta ' + (centinel + 1);
   counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
+
+
+
+  timeForQuestion = chosenQuestions[centinel].time
+  console.log(timeForQuestion);
+
+
+  document.getElementById("minutos").textContent = "00";
+  document.getElementById("segundos").textContent = timeForQuestion;
+
+
+
   displayQuestion.textContent = chosenQuestions[centinel].question;
   if (centinel === 7) {
     nextQuestion.addEventListener('click', function () {
@@ -193,37 +217,148 @@ nextQuestion.addEventListener('click', function () {
     })
   }
 })
-var mins = 00, segs, s, m;
 
-// Cargar "Tiempo restante" estático en el modal
-$(document).on('click', '.uploadcare--widget__button_type_open',function(event) {
-  return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
-});
 
-// Para "Record a video"
-$(document).on('click', '.uploadcare--camera__button_type_start-record', function(e) {
-  e.preventDefault();
-  $('#segundos').empty();
-  var time = chosenQuestions[centinel].time;
-  $('#segundos').text(time);
-  segs = time - 1;
-  m = setInterval('segundos()', 1000);
-});
+var cronometro;
 
-  function segundos() {
-    $('#segundos').html(segs);
-    if (segs == 0) {
-      var dm = clearInterval(m);
-      s = setInterval('minutos()', 1000);
+function detenerse() {
+  clearInterval(cronometro);
+}
+
+function carga() {
+
+  second = timeForQuestion;
+  minutes = 0;
+
+  s = document.getElementById("segundos");
+  m = document.getElementById("minutos");
+
+  cronometro = setInterval(
+    function () {
+      if (second == 60) {
+        second = 0;
+        minutes++;
+        m.innerHTML = contador_m;
+        if (contador_m == 60) {
+          contador_m = 0;
+        }
+      }
+
+      s.innerHTML = second;
+      second--;
+      if (second === -0) {
+        detenerse()
+      }
     }
-    segs--;
+    , 1000);
+}
+
+
+
+
+
+
+
+
+
+
+
+// crono
+
+var cronometro;
+
+function detenerse() {
+  clearInterval(cronometro);
+}
+
+function carga() {
+  centinel = true;
+
+  if (!centinel) {
+    second = 30;
+    minutes = 0;
+
+    centinel = false;
   }
-  
-  function minutos() {
-    $('#minutos').html(mins);
-    if (mins == 0) {
-      location.reload();
-      var ds = clearInterval(s);
+  else {
+    second = timeForQuestion;
+    minutes = 0;
+  }
+
+  s = document.getElementById("segundos");
+  m = document.getElementById("minutos");
+
+  cronometro = setInterval(
+    function () {
+      if (second == 60) {
+        second = 0;
+        minutes++;
+        m.innerHTML = contador_m;
+        if (contador_m == 60) {
+          contador_m = 0;
+        }
+      }
+
+      s.innerHTML = second;
+      second--;
+      if (second === -0) {
+        detenerse()
+      }
     }
-    mins--;
-  }
+    , 1000);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var mins = 00, segs, s, m;
+
+
+// // Cargar "Tiempo restante" estático en el modal
+// $(document).on('click', '.uploadcare--widget__button_type_open',function(event) {
+//   return $('.uploadcare--tab__content').append(`<div>Tiempo restante: <span id="minutos">00:</span><span id ="segundos">00</span></div>`);
+// });
+
+// // Para "Record a video"
+// $(document).on('click', '.uploadcare--camera__button_type_start-record', function(e) {
+//   e.preventDefault();
+//   $('#segundos').empty();
+//   var time = chosenQuestions[centinel].time;
+//   $('#segundos').text(time);
+//   segs = time - 1;
+//   m = setInterval('segundos()', 1000);
+// });
+
+//   function segundos() {
+//     $('#segundos').html(segs);
+//     if (segs == 0) {
+//       var dm = clearInterval(m);
+//       s = setInterval('minutos()', 1000);
+//     }
+//     segs--;
+//   }
+
+//   function minutos() {
+//     $('#minutos').html(mins);
+//     if (mins == 0) {
+//       location.reload();
+//       var ds = clearInterval(s);
+//     }
+//     mins--;
+//   }
