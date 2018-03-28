@@ -1,57 +1,40 @@
-$('#change-description').hide();
 $(document).ready(function() {
-  var config = {
-    apiKey: 'AIzaSyBCVgvNV0gko5O9rNFgQv8aXrtZOF2gzeM',
-    authDomain: 'fir-p-a292a.firebaseapp.com',
-    databaseURL: 'https://fir-p-a292a.firebaseio.com',
-    projectId: 'fir-p-a292a',
-    storageBucket: 'fir-p-a292a.appspot.com',
-    messagingSenderId: '215671637058'
-  };
-  firebase.initializeApp(config);
-
+  $inputFileVideos = $('#file-2');
+  $containerVideosPost = $('#container-videos-post');
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // obteniendo datos desde la cuenta de google del usuario
-      var email = user.email;
-      var userCode = user.uid;
-      var sede = localStorage.getItem('sede');
-      var name = localStorage.getItem('name');
-      // haciendo referencia al espacio exclusivo creado para el usuario en la basedatos
-      var userRef = firebase.database().ref('users').child(userCode);
-      // guardando datos del usuario en la base datos
-      var firebasePostREsf = userRef.child('email');
-      firebasePostREsf.set(email);
-      var firebasePostREsfName = userRef.child('name');
-      firebasePostREsfName.set(name);
-      var firebasePostREsfSede = userRef.child('sede');
-      firebasePostREsfSede.set(sede);
+      var codeUser = user.uid;
+      
+      /* Con esta funcion subiremos imagenes a storage de firebase */
+      $inputFileVideos.on('change', function() {
+        var videoUpload = $(this).prop('files')[0];
+        console.log(videoUpload)
 
-      var widget = uploadcare.Widget('[role=uploadcare-uploader]');
-      widget.onUploadComplete(function(info) {
-        var pregunta = 'pregunta';
-        var urlVideo = info.cdnUrl + 'nth/0/';
-        firebase.database().ref('users').child(user.uid).child('post').push({
-          pregunta: pregunta,
-          url: urlVideo
-        });
-        console.log(urlVideo);
-        $('#input').val('');
+        var uploadTask = firebase.storage().ref().child('videoPost/' + videoUpload.name).put(videoUpload);
+        uploadTask.on('state_changed', 
+          function(s) {
+            // var porcentage = (s.bytesTransferred/ s.totalBytes) * 100;
+            // uploader.value = porcentage;
+          },
+          function(error) {
+            alert('Hubo un error al subir la imagen');
+          },
+          function() {
+            // Se mostrará cuando se ha subido exitosamente la imagen
+            var downloadURL = uploadTask.snapshot.downloadURL;
+            createVideoPostFirebaseNode(videoUpload.name, downloadURL);
+          });
       });
-    };
-  });
-
-  // Funcionalidad cerrar sesión
-  $('#logout').on('click', function(event) {
-    event.preventDefault();
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-      console.log('Saliste de sesion');
-      window.location.href = '../index.html';
-    }).catch(function(error) {
-      // An error happened.
-      console.log(error);      
-    });
+      
+      function createVideoPostFirebaseNode(nameVideoPost, url) {
+        firebase.database().ref('bd').child(codeUser).child('videoPost').push({
+          name: nameVideoPost,
+          url: url
+        });
+      }
+    } else {
+      // No user is signed in.
+    }
   });
 });
