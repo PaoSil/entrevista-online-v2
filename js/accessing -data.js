@@ -150,39 +150,39 @@ firebase.auth().onAuthStateChanged(function (user) {
     })
 
 
-    var cronometro;
+    // var cronometro;
 
-    function detenerse() {
-      clearInterval(cronometro);
-    }
+    // function detenerse() {
+    //   clearInterval(cronometro);
+    // }
 
-    function carga() {
+    // function carga() {
 
-      second = timeForQuestion;
-      minutes = 0;
+    //   second = timeForQuestion;
+    //   minutes = 0;
 
-      s = document.getElementById("segundos");
-      m = document.getElementById("minutos");
+    //   s = document.getElementById("segundos");
+    //   m = document.getElementById("minutos");
 
-      cronometro = setInterval(
-        function () {
-          if (second == 60) {
-            second = 0;
-            minutes++;
-            m.innerHTML = contador_m;
-            if (contador_m == 60) {
-              contador_m = 0;
-            }
-          }
+    //   cronometro = setInterval(
+    //     function () {
+    //       if (second == 60) {
+    //         second = 0;
+    //         minutes++;
+    //         m.innerHTML = contador_m;
+    //         if (contador_m == 60) {
+    //           contador_m = 0;
+    //         }
+    //       }
 
-          s.innerHTML = second;
-          second--;
-          if (second === -0) {
-            detenerse()
-          }
-        }
-        , 1000);
-    }
+    //       s.innerHTML = second;
+    //       second--;
+    //       if (second === -0) {
+    //         detenerse()
+    //       }
+    //     }
+    //     , 1000);
+    // }
 
     /* Funcion para el cronometro */
 
