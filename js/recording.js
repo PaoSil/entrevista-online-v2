@@ -3,8 +3,9 @@
 var recordButton, stopButton, recorder, liveStream;
 
 function capturingAudioAndVideo() {
+  $('#turnOnCamera').hide();
 
-  document.getElementById("record").textContent = "EMPEZAR A GRABAR";
+  document.getElementById("record").textContent = "GRABAR";
   document.getElementById("stop").textContent = "ENVIAR GRABACION";
 
   recordButton = document.getElementById('record');
@@ -44,6 +45,8 @@ function startRecording() {
 function stopRecording() {
   recordButton.disabled = false;
   stopButton.disabled = true;
+
+  
 
   // Detener el grabador eventualmente activará el evento 'dataavailable' y podremos completar el proceso de grabación
   recorder.stop();
@@ -90,7 +93,6 @@ function stopChronometer() {
  }
           
 function chronometer()  {
-  debugger
  
    timeSecond =localStorage.timeCrono;
      
