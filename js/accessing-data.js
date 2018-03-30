@@ -123,7 +123,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       timeForQuestion = chosenQuestions[centinel].time;
       localStorage.timeCrono = timeForQuestion;
-console.log(localStorage.timeCrono);
+       console.log(localStorage.timeCrono);
       
   
       nextQuestion.addEventListener('click', function () {

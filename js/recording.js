@@ -1,6 +1,6 @@
 
 
-var recordButton, stopButton, recorder, liveStream;
+var recordButton, stopButton, recorder, liveStream, next;
 
 function capturingAudioAndVideo() {
   $('#turnOnCamera').hide();
@@ -9,7 +9,8 @@ function capturingAudioAndVideo() {
   document.getElementById("stop").textContent = "ENVIAR GRABACION";
 
   recordButton = document.getElementById('record');
-  stopButton = document.getElementById('stop');
+  stopButton = document.getElementById('stop');  
+  next = document.getElementById('progress-button');
 
   // obtener video y transmisión de audio del usuario
   navigator.mediaDevices.getUserMedia({
@@ -26,6 +27,7 @@ function capturingAudioAndVideo() {
       recordButton.disabled = false;
       recordButton.addEventListener('click', startRecording);
       stopButton.addEventListener('click', stopRecording);
+      next.addEventListener('click', desability);
 
     });
 };
@@ -39,17 +41,22 @@ function startRecording() {
   recordButton.disabled = true;
   stopButton.disabled = false;
 
+  
+
   recorder.start();
 }
 
 function stopRecording() {
   recordButton.disabled = false;
   stopButton.disabled = true;
-
-  
+  next.disabled = false;
 
   // Detener el grabador eventualmente activará el evento 'dataavailable' y podremos completar el proceso de grabación
   recorder.stop();
+}
+
+function desability() {
+  next.disabled = true;
 }
 
 function onRecordingReady(e) {
@@ -85,6 +92,8 @@ function onRecordingReady(e) {
     }
   });
 }
+
+
 
 
 var cronometro; 
