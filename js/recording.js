@@ -47,7 +47,7 @@ function startRecording() {
 }
 
 function stopRecording() {
-  recordButton.disabled = false;
+  
   stopButton.disabled = true;
   next.disabled = false;
 
@@ -57,6 +57,7 @@ function stopRecording() {
 
 function desability() {
   next.disabled = true;
+  recordButton.disabled = false;
 }
 
 function onRecordingReady(e) {
