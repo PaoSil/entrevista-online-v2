@@ -12,21 +12,37 @@
 
   
  <script type="text/javascript">
-        
-			var segundos = 15;
+
+var segundos = 15;
 			function cronometro() {
         document.getElementById('tiempo').innerHTML = segundos;
-			if( segundos < 10) {
-					document.getElementById('tiempo').innerHTML ='0' + segundos;
-				}
+	
 				if(segundos==0){
-          // alert('Tu tiempo ha terminado');
+          alert('Tu tiempo ha terminado');
           console.log('tu tiempo ha terminado')
 				}else{
 					var t = setTimeout(function(){cronometro()},1000);
 				}
 				segundos--;
       }
+
+
+
+        
+			// var segundos = 15;
+			// function cronometro() {
+      //   document.getElementById('tiempo').innerHTML = segundos;
+			// if( segundos < 10) {
+			// 		document.getElementById('tiempo').innerHTML ='0' + segundos;
+			// 	}
+			// 	if(segundos==0){
+      //     // alert('Tu tiempo ha terminado');
+      //     console.log('tu tiempo ha terminado')
+			// 	}else{
+			// 		var t = setTimeout(function(){cronometro()},1000);
+			// 	}
+			// 	segundos--;
+      // }
           
 
 		</script>	
@@ -36,12 +52,9 @@
 
      
 
-      <p class="style-cronometro">
-          <span class="minutes" id="minutos">00</span>:
-          <span class="second" id="mama">00</span>
-        </p>
+ 
 
-        second.textContent =  chosenQuestions[centinel].time;
+  
     
 </body>
 </html>

@@ -21,7 +21,7 @@
 
       <p class="style-cronometro">
           <span class="minutes" id="minutos">00</span>:
-          <span class="second" id="mama">00</span>
+          <span class="second" id="segundos">00</span>
         </p>
 
     </div>
@@ -58,12 +58,13 @@
         </figure>
       
         <p class="flex">
-          <button class="btn bg-yellow text-dark font-weight-bold ml-3" onclick="carga()" id="record"></button>
-          <button class="btn bg-yellow text-dark font-weight-bold ml-3" onclick="detenerse()" id="stop" disabled> </button>
+          <button class="btn bg-yellow text-dark font-weight-bold ml-3" onclick="chronometer()" id="record"></button>
+          <button class="btn bg-yellow text-dark font-weight-bold ml-3" onclick="stopChronometer()" id="stop" disabled> </button>
         </p>
       </div>
     </div>
   </div>
+
   <footer class="vh-15">
     <!-- Barra de progreso -->
     <div class="container">
@@ -86,7 +87,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="../js/data-questions.js"></script>
-  <script src="../js/accessing -data.js"></script>
+  <script src="../js/accessing-data.js"></script>
   <script src="../js/recording.js"></script>
   <script src="../js/progress-bar.js"></script>
 </body>

@@ -1,3 +1,5 @@
+
+
 var recordButton, stopButton, recorder, liveStream;
 
 function capturingAudioAndVideo() {
@@ -28,6 +30,7 @@ function capturingAudioAndVideo() {
 };
 
 function startRecording() {
+
   recorder = new MediaRecorder(liveStream);
 
   recorder.addEventListener('dataavailable', onRecordingReady);
@@ -79,3 +82,29 @@ function onRecordingReady(e) {
     }
   });
 }
+
+
+var cronometro; 
+function stopChronometer() {        
+  clearInterval(cronometro);
+ }
+          
+function chronometer()  {
+  debugger
+ 
+   timeSecond =localStorage.timeCrono;
+     
+   segundos = document.getElementById("segundos");       
+    cronometro = setInterval(
+
+    function(){  
+      if(timeSecond==00)  {
+        stopChronometer()
+      }    
+
+      segundos.innerHTML = timeSecond;
+      timeSecond--;
+  } 
+      ,1000);
+
+    }

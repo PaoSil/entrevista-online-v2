@@ -88,7 +88,6 @@ firebase.auth().onAuthStateChanged(function (user) {
           var x = result[i][y].Question;
           var l = result[i][y].Time;
   
-          console.log(l)
   
           var userQuestions = chosenQuestions.push({
             question: x,
@@ -113,41 +112,52 @@ firebase.auth().onAuthStateChanged(function (user) {
       var nextQuestion = document.querySelector('.next-question-js');
   
       var centinel = 0;
-      var timeForQuestion = '';
+      var timeForQuestion = 'null';
   
   
       title.textContent = 'Pregunta ' + (centinel + 1);
       counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
+
       second.textContent = chosenQuestions[centinel].time;
       displayQuestion.textContent = chosenQuestions[centinel].question;
 
+      timeForQuestion = chosenQuestions[centinel].time;
+      localStorage.timeCrono = timeForQuestion;
+console.log(localStorage.timeCrono);
+      
   
       nextQuestion.addEventListener('click', function () {
+       
         centinel += 1;
         title.textContent = 'Pregunta ' + (centinel + 1);
         counter.textContent = 'tiempo estimado ' + chosenQuestions[centinel].time;
+        second.textContent = chosenQuestions[centinel].time;
   
-        second.textContent = chosenQuestions[centinel].time
-      
-  
-  
-        document.getElementById("minutos").textContent = "00";
-        document.getElementById("segundos").textContent = timeForQuestion;
-  
-  
-  
-        displayQuestion.textContent = chosenQuestions[centinel].question;
+        timeForQuestion = chosenQuestions[centinel].time;
+
+        localStorage.timeCrono = timeForQuestion;
+        console.log(localStorage.timeCrono);
+
+        displayQuestion.textContent = chosenQuestions[centinel].question; 
+        
+        
+
         if (centinel === 7) {
           nextQuestion.addEventListener('click', function () {
             title.textContent = 'Pregunta ' + (centinel);
             window.location.href = 'finish.html';
           })
         }
+      
+
       })
-  
-  window.onload = function() {
-    
-  }
+
+ 
+
+
+
+
+
    
   
     }

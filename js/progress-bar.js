@@ -1,6 +1,9 @@
 $(document).ready(function () {
   // debugger;
   var $progressButton = $('#progress-button');
+  
+
+
   var $progressBar = $('.user-progress-bar');
   var $progressBarContainerWidth = $('.progress-bar-container').css('width');
   var $progressBarPercentage = parseInt($progressBarContainerWidth) / 8;
