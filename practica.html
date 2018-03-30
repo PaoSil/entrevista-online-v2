@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="cronometro()" >
+
+
+
+  
+ <script type="text/javascript">
+        
+			var segundos = 15;
+			function cronometro() {
+        document.getElementById('tiempo').innerHTML = segundos;
+			if( segundos < 10) {
+					document.getElementById('tiempo').innerHTML ='0' + segundos;
+				}
+				if(segundos==0){
+          // alert('Tu tiempo ha terminado');
+          console.log('tu tiempo ha terminado')
+				}else{
+					var t = setTimeout(function(){cronometro()},1000);
+				}
+				segundos--;
+      }
+          
+
+		</script>	
+			<div style="color:blue; font-family: verdana, arial; font-size:30px; padding:15px;" id ="time"> 
+          <p><span>00</span>: <span id="tiempo">00</span> </p>
+      </div>	
+
+     
+
+      <p class="style-cronometro">
+          <span class="minutes" id="minutos">00</span>:
+          <span class="second" id="mama">00</span>
+        </p>
+
+        second.textContent =  chosenQuestions[centinel].time;
+    
+</body>
+</html>

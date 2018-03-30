@@ -16,7 +16,14 @@
 <body class="">
   <header>
     <div class="d-flex justify-content-end mt-3 mr-3">
-      <a class="btn btn-outline-magenta font-weight-bold ml-3" id="logout" href="#" role="button">Cerrar Sesión</a>
+      <!-- <a class="btn btn-outline-magenta font-weight-bold ml-3" id="logout" href="#" role="button">Cerrar Sesión</a> -->
+   
+
+      <p class="style-cronometro">
+          <span class="minutes" id="minutos">00</span>:
+          <span class="second" id="mama">00</span>
+        </p>
+
     </div>
   </header>
   <main class="">
@@ -43,16 +50,13 @@
   <div class="container d-flex align-items-center justify-content-center">
     <div class="row">
       <div class="col-sm-8">
-        <p>Tiempo restante
-          <span id="minutos"></span>:
-          <span id="segundos"></span>
-        </p>
+      
         <figure>
           <video id="live" width="520"></video>
           <br />
-          <!-- <caption>live preview</caption> -->
+        
         </figure>
-        <!-- <button id="record">EMPEZAR A GRABAR</button> -->
+      
         <p class="flex">
           <button class="btn bg-yellow text-dark font-weight-bold ml-3" onclick="carga()" id="record"></button>
           <button class="btn bg-yellow text-dark font-weight-bold ml-3" onclick="detenerse()" id="stop" disabled> </button>

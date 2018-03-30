@@ -166,3 +166,9 @@ header {
     max-width: 950px;
   }
 }
+
+.style-cronometro {
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
