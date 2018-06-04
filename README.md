@@ -1,4 +1,4 @@
-# Plataforma de entrevistas online Laboratoria
+# Entrevista online Laboratoria
 
 Laboratoria es un programa de inserción laboral solo para mujeres que no han podido acceder a trabajos de calidad, con formato de "Bootcamp".
 
