@@ -1,8 +1,10 @@
 # Plataforma de entrevistas online Laboratoria
 
-Laboratoria es un programa de inserción laboral solo para mujeres que no han podido acceder a trabajos de calidad, con formato de "Bootcamp". 
+Laboratoria es un programa de inserción laboral solo para mujeres que no han podido acceder a trabajos de calidad, con formato de "Bootcamp".
 
 Para la selección de estas mujeres existe un proceso efectivo, pero un poco tedioso, en vista a ello, proponen crear una plataforma virtual para las entrevistas que realizan.
+
+![plataforma](assets/images/image.png)
 
 ## Equipo:
 
@@ -14,7 +16,7 @@ Para la selección de estas mujeres existe un proceso efectivo, pero un poco ted
 
 ## **RESEARCH**
 
-* Realizado por: 
+* Realizado por:
   - Alexandra Calderón Chumbes
   - Paola Huamán Luyo
 
@@ -24,9 +26,9 @@ Para la selección de estas mujeres existe un proceso efectivo, pero un poco ted
 
 * Resultado de Investigaciones anteriores
 
-El primer proyecto de desarrollo de esta plataforma se hizo durante el Talent Fest de Laboratoria, nuestro trabajo ahora es: **rediseñar la experiencia de usuario y refactorizar código**. 
+El primer proyecto de desarrollo de esta plataforma se hizo durante el Talent Fest de Laboratoria, nuestro trabajo ahora es: **rediseñar la experiencia de usuario y refactorizar código**.
 
-Actualmente la platorma luce así: 
+Actualmente la platorma luce así:
 
 [Plataforma de entrevistas online - Laboratoria V1](https://team-laboratoria.github.io/Entrevista-online/views/welcome.html)
 
@@ -61,14 +63,14 @@ Los objetivos de investigación son diferentes, como:
 
 Otras preguntas que resolverá la investigación:
 
-- ¿Qué es útil? 
+- ¿Qué es útil?
 - ¿Qué se puede usar?
 - ¿Qué diseño funciona para las personas y cómo se puede implementar?
 
 
-### Metodología 
+### Metodología
 
-* **Design Thinking:** 
+* **Design Thinking:**
 ¿Por qué? Es una forma de crear productos y servicios que tiendan a satisfacer en mejor manera las necesidades de los usuarios haciéndolos parte activa del proceso de creación.
 * **Agile:**
 Basa su desarrollo en un ciclo iterativo , en el que las necesidades y soluciones evolucionan a través de la colaboración entre los diferentes equipos involucrados en el proyecto.
@@ -78,7 +80,7 @@ Basa su desarrollo en un ciclo iterativo , en el que las necesidades y solucione
 En este caso, las entrevistas serán realizadas a personas dentro del equipo de selección en Laboratoria;
 
 - Daniela Sarzosa
-- Beatriz Castiglia 
+- Beatriz Castiglia
 - María Fernanda Zamora
 
 
@@ -97,15 +99,15 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 - ¿Cuál es el proceso actual de reclutamiento?
 - ¿Cómo sabes en qué fase está cada postulante?
 
-1. Daniela Sarzosa 
+1. Daniela Sarzosa
 
 [Entrevista a Daniela](https://drive.google.com/drive/folders/1EM7kBcPld6eUIgCR9gT1eQnOfb4tGhDU?usp=sharing)
 
-2. Beatriz Castiglia 
+2. Beatriz Castiglia
 
 [Entrevista a Daniela](https://drive.google.com/drive/folders/1I353VAMVsreUJpq61geOoTdWCRljqgLd?usp=sharing)
 
-3. María Fernanda Zamora 
+3. María Fernanda Zamora
 
 [Entrevista a Daniela](https://drive.google.com/drive/folders/12CUDv705wNdBtQvUf_0v5r-HD3ZZduEp?usp=sharing)
 
@@ -114,13 +116,13 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 
 * Las entrevistas presenciales duran mucho, se busca que en la plataforma online el tiempo sea de 15 a 20 minutos como máximo por cada postulante.
 
-* Las entrevistas tienen una estructura establecida: 
+* Las entrevistas tienen una estructura establecida:
 - Verficación de datos.
 - Preguntas por competencias.
 - Preguntas aleatorias.
 
-* El tiempo límite depende de la pregunta. Por ejemplo: 
-- Preguntas de verificación: 20s como máximo. 
+* El tiempo límite depende de la pregunta. Por ejemplo:
+- Preguntas de verificación: 20s como máximo.
 - Preguntas por competencias: 1min - 2min.
 - Preguntas aleatorias: 20s como máximo.
 
@@ -138,7 +140,7 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 * El proceso que usan ahora para la selección es efectivo pero aún les sigue demandando mucho tiempo. Para este usan herramientas como: Zapier, Typeform, Google Sheets y Mailchimp.
 
 
-### Prototipo en papel 
+### Prototipo en papel
 
 ![Prototipo](assets/img-readme/prototipo-1.jpg)
 ![Prototipo](assets/img-readme/prototipo-2.jpg)
@@ -149,13 +151,13 @@ En la siguiente guía se dan las **preguntas base** para las entrevistas realiza
 ![Prototipo](assets/img-readme/prototipo-7.jpg)
 ![Prototipo](assets/img-readme/prototipo-8.jpg)
 
-### Testing 
+### Testing
 
 #### Usuario 1
 
 **Valeria Valles**
 
-Alumna de Laboratoria. 
+Alumna de Laboratoria.
 
 ![Valeria](assets/img-readme/testing/valeria-1.jpg)
 ![Valeria](assets/img-readme/testing/valeria-2.jpg)
@@ -165,7 +167,7 @@ Alumna de Laboratoria.
 - No lee todo el texto, solo palabras clave.
 
 
-**Feedback:** 
+**Feedback:**
 
 - Flujo sencillo.
 - Entiende el proceso de grabación.
@@ -175,7 +177,7 @@ Alumna de Laboratoria.
 
 **Ruth Matos**
 
-Alumna de Laboratoria. 
+Alumna de Laboratoria.
 
 ![Valeria](assets/img-readme/testing/ruth-1.jpg)
 ![Valeria](assets/img-readme/testing/ruth-2.jpg)
@@ -186,7 +188,7 @@ Alumna de Laboratoria.
 - No entiende el proceso de grabación.
 
 
-**Feedback:** 
+**Feedback:**
 
 - Flujo sencillo.
 - Le gusta la idea de información sobre precios y horarios.
@@ -196,7 +198,7 @@ Alumna de Laboratoria.
 
 **Molly Sesquién**
 
-Alumna de Laboratoria. 
+Alumna de Laboratoria.
 
 ![Molly](assets/img-readme/testing/molly-1.jpg)
 ![Molly](assets/img-readme/testing/molly-2.jpg)
@@ -207,7 +209,7 @@ Alumna de Laboratoria.
 - No entiende el proceso de grabación.
 
 
-**Feedback:** 
+**Feedback:**
 
 - Flujo sencillo.
 - Le gusta la idea de información sobre precios y horarios.
@@ -217,7 +219,7 @@ Alumna de Laboratoria.
 
 **Maythé Infante**
 
-Alumna de Laboratoria. 
+Alumna de Laboratoria.
 
 ![Maythe](assets/img-readme/testing/maythe-1.jpg)
 ![Maythe](assets/img-readme/testing/maythe-2.jpg)
@@ -228,7 +230,7 @@ Alumna de Laboratoria.
 - Entiende el proceso de grabación y guardado.
 
 
-**Feedback:** 
+**Feedback:**
 
 - Flujo sencillo.
 - No le agrada mucho la idea de información sobre precios y horarios.
@@ -268,7 +270,3 @@ Alumna de Laboratoria.
 - Firebase.
 - API HTML5.
 - Bootstrap 4.
-
-
-
-
