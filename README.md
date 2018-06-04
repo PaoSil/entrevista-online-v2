@@ -1,8 +1,8 @@
 # Entrevista online
 
-Laboratoria es un programa de inserción laboral solo para mujeres que no han podido acceder a trabajos de calidad, con formato de "Bootcamp". Para la selección de estas mujeres existe un proceso efectivo, pero un poco tedioso, en vista a ello, proponen crear una plataforma virtual para las entrevistas que realizan.
+Laboratoria, propone crear una plataforma virtual para las entrevistas que realizan a las postulantes, para poder agilizar el proceso de selección.
 
-![plataforma](assets/images/image.png)
+![plataforma](assets/images/plataforma-online.png)
 
 ## Desarrollado para:
 
