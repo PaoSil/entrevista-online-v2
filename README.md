@@ -2,7 +2,7 @@
 
 Laboratoria, propone crear una plataforma virtual para las entrevistas que realizan a las postulantes, para poder agilizar el proceso de selección.
 
-![plataforma](assets/images/online.png)
+![plataforma](https://github.com/PaoSil/entrevista-online-v2/blob/master/assets/images/online.png)
 
 ## Desarrollado para:
 
