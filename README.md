@@ -2,9 +2,9 @@
 
 Laboratoria es un programa de inserción laboral solo para mujeres que no han podido acceder a trabajos de calidad, con formato de "Bootcamp".
 
-Para la selección de estas mujeres existe un proceso efectivo, pero un poco tedioso, en vista a ello, proponen crear una plataforma virtual para las entrevistas que realizan.
-
 ![plataforma](assets/images/image.png)
+
+Para la selección de estas mujeres existe un proceso efectivo, pero un poco tedioso, en vista a ello, proponen crear una plataforma virtual para las entrevistas que realizan.
 
 ## Equipo:
 
